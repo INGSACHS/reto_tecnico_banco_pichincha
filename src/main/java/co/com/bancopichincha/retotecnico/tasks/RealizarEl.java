@@ -5,6 +5,7 @@ import co.com.bancopichincha.retotecnico.interactions.CompletarEl;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
+import net.thucydides.core.annotations.Step;
 
 import java.util.Map;
 
@@ -21,6 +22,7 @@ public class RealizarEl implements Task {
     }
 
     @Override
+    @Step("{0} finaliza el proceso de compra de los productos")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 AgregarLosProductos.alCarritoDeCompra(productoUno, productoDos),

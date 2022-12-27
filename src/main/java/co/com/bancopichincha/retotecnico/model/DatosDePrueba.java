@@ -7,15 +7,16 @@ public class DatosDePrueba {
 
     private static Map<String, Object> body = new HashMap<>();
 
-    private DatosDePrueba(){
+    private DatosDePrueba() {
 
     }
 
-    public static void cargarDatosDePrueba(Map<String, Object> datos){
+    public static void cargarDatosDePrueba(Map<String, Object> datos) {
         body = datos;
     }
 
-    public static Map<String, Object> obtenerDatosDePrueba(){
+    public static Map<String, Object> obtenerDatosDePrueba() {
         return body;
     }
+
 }

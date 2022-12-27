@@ -9,6 +9,7 @@ import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.rest.interactions.Post;
 import net.serenitybdd.screenplay.rest.interactions.Put;
+import net.thucydides.core.annotations.Step;
 import org.apache.http.HttpStatus;
 
 import static co.com.bancopichincha.retotecnico.utils.resources.ObtenerCapacidad.CAPACIDAD_ACTUALIZAR_DATOS;
@@ -24,10 +25,11 @@ public class RegistrarLaSolicitud implements Interaction {
     }
 
     @Override
+    @Step("{0} ejecuta el proceso de #tipoSolicitud del registro")
     public <T extends Actor> void performAs(T actor) {
         SerenityRest.reset();
         actor.attemptsTo(
-                Check.whether(tipoSolicitud.equals("Creación"))
+                Check.whether(tipoSolicitud.equals("creación"))
                         .andIfSo(
                                 Post.to(CAPACIDAD_AGREGAR_MASCOTA.obtenerCapacidad())
                                         .with(request -> request

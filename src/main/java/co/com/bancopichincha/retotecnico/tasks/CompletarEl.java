@@ -5,6 +5,7 @@ import co.com.bancopichincha.retotecnico.interactions.RegistrarLaSolicitud;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
+import net.thucydides.core.annotations.Step;
 
 import java.util.Map;
 
@@ -25,6 +26,7 @@ public class CompletarEl implements Task {
     }
 
     @Override
+    @Step("{0} realiza los pasos para el proceso de #tipoSolicitud de su mascota en el aplicativo")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 DiligenciarEl.formularioDeRegistro(nombrePlantilla, datosDePrueba),

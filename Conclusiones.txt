@@ -1,0 +1,15 @@
+Conclusiones:
+
+1. Los retos estuvieron muy bien, en especial el de API, que permitió recordad un poco el manejo de la librería de Serenity
+Rest Assured.
+
+2. El reto web tenía un pequeño desafió a la hora de seleccionar los productos del inventario, pero gracias a un método
+creado en la carpeta de utilidades y al manejo de objetos dinámicos que incorpora la clase Target, se puede seleccionar
+cualquier producto con solo pasar el nombre del mismo.
+
+3. El reto API me presento un poco de reto en el enunciado final donde se debia consultar la información de la mascota por
+su estado. Sin embargo, logré encontre una pequeña ayuda que al implementarla me ayudo a dar respueta al interrogante
+que tenía sobre la implementación de la question
+
+4. Para el reto API, la solución se planteó usando la librería de Serenity Rest Assured a pesar que no se indicaba en
+el enunciado. Sin embargo, me pareció correcto, ya que conozco más de este Framework que de Cypress o Karate para APIs

@@ -6,6 +6,7 @@ import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Scroll;
+import net.thucydides.core.annotations.Step;
 
 import java.util.Map;
 
@@ -20,6 +21,7 @@ public class CompletarEl implements Interaction {
     }
 
     @Override
+    @Step("{0} diligencia el formulario de compra")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Enter.theValue(datosPersonales.get("primer_nombre")).into(TXT_FIRST_NAME),

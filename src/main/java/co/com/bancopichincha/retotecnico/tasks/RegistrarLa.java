@@ -3,6 +3,7 @@ package co.com.bancopichincha.retotecnico.tasks;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
+import net.thucydides.core.annotations.Step;
 
 import java.util.Map;
 import java.util.Set;
@@ -23,6 +24,7 @@ public class RegistrarLa implements Task {
     }
 
     @Override
+    @Step("{0} registra los datos básicos de la mascota")
     public <T extends Actor> void performAs(T actor) {
         Map<String, String> datosNuevaMascota = obtenerDatosRegistroMascota(datosMascota, tipoSolicitud);
         Set<Map.Entry<String, String>> datosAuxiliares = datosNuevaMascota.entrySet();

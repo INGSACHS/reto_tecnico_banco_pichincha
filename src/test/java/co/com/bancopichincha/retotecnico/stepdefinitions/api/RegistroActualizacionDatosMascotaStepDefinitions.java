@@ -1,17 +1,19 @@
 package co.com.bancopichincha.retotecnico.stepdefinitions.api;
 
+import co.com.bancopichincha.retotecnico.questions.CodigoRespuesta;
+import co.com.bancopichincha.retotecnico.questions.InformacionMascota;
+import co.com.bancopichincha.retotecnico.questions.ObtenerNombre;
 import co.com.bancopichincha.retotecnico.tasks.CompletarEl;
 import co.com.bancopichincha.retotecnico.tasks.ConsultarLa;
 import co.com.bancopichincha.retotecnico.tasks.RegistrarLa;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
-import org.apache.http.HttpStatus;
 
 import java.util.Map;
 
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-import static net.serenitybdd.screenplay.rest.questions.ResponseConsequence.seeThatResponse;
 import static org.hamcrest.Matchers.equalTo;
 
 public class RegistroActualizacionDatosMascotaStepDefinitions {
@@ -52,7 +54,7 @@ public class RegistroActualizacionDatosMascotaStepDefinitions {
     }
 
     @Cuando("realizo la búsqueda del registro de la mascota por el estado de la misma")
-    public void consultarInformacionMascotaPorEstado(){
+    public void consultarInformacionMascotaPorEstado() {
         theActorInTheSpotlight().attemptsTo(
                 ConsultarLa.informacionDeLaMascotaPorEstado()
         );
@@ -60,19 +62,25 @@ public class RegistroActualizacionDatosMascotaStepDefinitions {
 
     @Entonces("debo evidenciar que la solicitud radicada se registro con éxito en el sistema")
     public void validarEstadoRegistroMascota() {
-        theActorInTheSpotlight()
-                .should(seeThatResponse("El código de respuesta del servicio",
-                        response -> response.statusCode(HttpStatus.SC_OK)));
+        theActorInTheSpotlight().should(
+                seeThat("El código de respuesta del servicio es", CodigoRespuesta.esCorrecto()));
     }
 
     @Entonces("debo observar que la información visualizada corresponda al nombre de mi mascota: {} y que el estado " +
             "es: {}")
     public void validarNombreMascotaEnRegistro(String nombreMascota, String estadoMascota) {
-        theActorInTheSpotlight()
-                .should(seeThatResponse("El nombre de la mascota registrada",
-                                response -> response.assertThat().body("name", equalTo(nombreMascota))),
-                        seeThatResponse("El estado de la mascota registrada",
-                                response -> response.assertThat().body("status", equalTo(estadoMascota))));
+        theActorInTheSpotlight().should(
+                seeThat("La información registrada de la mascota es correcta",
+                        InformacionMascota.esLaCorrecta(nombreMascota, estadoMascota))
+        );
+    }
+
+    @Entonces("debo observar que la nueva información registrada corresponda a la de mi mascota: {}")
+    public void validarActualizacionInformacionMascota(String nombreMascota) {
+        theActorInTheSpotlight().should(
+                seeThat("La información actualizada corresponde a la del nombre de su mascota que",
+                        ObtenerNombre.deMascota(), equalTo(nombreMascota))
+        );
     }
 
 }

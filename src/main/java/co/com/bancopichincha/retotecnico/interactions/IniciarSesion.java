@@ -4,6 +4,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.thucydides.core.annotations.Step;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -22,6 +23,7 @@ public class IniciarSesion implements Interaction {
     }
 
     @Override
+    @Step("{0} inicia sesión en la aplicación SWAGLABS")
     public <T extends Actor> void performAs(T actor) {
         String usuario = propiedades.getProperty("usuario_swaglabs");
         String password = propiedades.getProperty("password_swaglabs");

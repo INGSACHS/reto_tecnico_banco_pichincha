@@ -157,6 +157,11 @@ gradle test --tests "co.com.bancopichincha.retotecnico.runners.web.ProcesoDeComp
 gradle test --tests "co.com.bancopichincha.retotecnico.runners.api.RegistroAcutalizacionDatosMascota" -Denvironment=qa
 ```
 
+- **Comando para la ejecución de todos los escenarios de prueba del proyecto**
+```console
+gradle test --tests "co.com.bancopichincha.retotecnico.runners.EjecutarTodosLosEscenarios" -Denvironment=qa
+```
+
 ### *4.3 Ejecución de Escenarios desde la Consola*
 1. Una vez clonado el repositorio en la máquina local, debemos acceder hasta la carpeta que contiene el proyecto y abrir
 un nuevo ***Símbolo del Sistema (CMD)*** y escribir los siguientes comandos y dar Enter:
@@ -168,6 +173,11 @@ gradle test --tests "co.com.bancopichincha.retotecnico.runners.web.ProcesoDeComp
 - **Comando para la ejecución de los escenarios de prueba para API**
 ```console
 gradle test --tests "co.com.bancopichincha.retotecnico.runners.api.RegistroAcutalizacionDatosMascota" -Denvironment=qa
+```
+
+- **Comando para la ejecución de todos los escenarios de prueba del proyecto**
+```console
+gradle test --tests "co.com.bancopichincha.retotecnico.runners.EjecutarTodosLosEscenarios" -Denvironment=qa
 ```
 
 ### *4.4. Informe Ejecución Escenarios de Prueba*

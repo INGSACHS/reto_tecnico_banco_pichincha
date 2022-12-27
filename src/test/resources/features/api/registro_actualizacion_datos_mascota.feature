@@ -23,4 +23,4 @@ Característica: Proceso de Registro y Actualización de Información -  Nueva M
 
   Escenario: Consultar Información Mascota por Estado
     Cuando realizo la búsqueda del registro de la mascota por el estado de la misma
-    Entonces debo observar que la información visualizada corresponda al nombre de mi mascota: Bolt y que el estado es: sold
+    Entonces debo observar que la nueva información registrada corresponda a la de mi mascota: Bolt

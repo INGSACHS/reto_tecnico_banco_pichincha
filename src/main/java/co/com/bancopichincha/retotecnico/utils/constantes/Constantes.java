@@ -17,7 +17,7 @@ public class Constantes {
     public static final String CONSUMO_SERVICIO = "Se produjo un error al consumir el método %s";
     public static final String FOTO = "https://i0.wp.com/blog.mascotaysalud.com/wp-content/uploads/2019/05/" +
             "CARA-ROTTWEILER.jpg?w=865&ssl=1";
-    public static final List<String> SOLICITUDES = List.of("Creación", "Actualización");
-    public static final List<String> CONSULTAS = List.of("Identificador", "Estado");
+    public static final List<String> SOLICITUDES = List.of("creación", "actualización");
+    public static final List<String> CONSULTAS = List.of("identificador", "estado");
 
 }

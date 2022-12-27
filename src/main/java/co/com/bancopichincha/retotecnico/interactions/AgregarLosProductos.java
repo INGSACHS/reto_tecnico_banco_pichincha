@@ -4,6 +4,7 @@ import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
+import net.thucydides.core.annotations.Step;
 
 import static co.com.bancopichincha.retotecnico.userinterfaces.CartPage.BTN_CHECKOUT;
 import static co.com.bancopichincha.retotecnico.userinterfaces.InventoryPage.BTN_ADD_TO_CART;
@@ -21,6 +22,7 @@ public class AgregarLosProductos implements Interaction {
     }
 
     @Override
+    @Step("{0} agrega los productos al carrito de compra")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(BTN_ADD_TO_CART.of(productoUno)),

@@ -16,5 +16,4 @@ public class HomePage {
     public static final Target BTN_LOGIN_BUTTON = Target.the("Logín Button")
             .locatedBy("//input[@id='login-button']");
 
-
 }

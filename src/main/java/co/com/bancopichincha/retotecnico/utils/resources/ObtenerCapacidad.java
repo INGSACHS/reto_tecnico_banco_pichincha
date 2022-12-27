@@ -3,6 +3,7 @@ package co.com.bancopichincha.retotecnico.utils.resources;
 import static co.com.bancopichincha.retotecnico.utils.constantes.Capacidades.*;
 
 public enum ObtenerCapacidad {
+
     CAPACIDAD_AGREGAR_MASCOTA(AGREGAR_MASCOTA),
     CAPACIDAD_CONSULTAR_MASCOTA_IDENTIFICADOR(CONSULTAR_MASCOTA_IDENTIFICADOR),
     CAPACIDAD_ACTUALIZAR_DATOS(ACTUALIZAR_INFORMACION),
@@ -17,4 +18,5 @@ public enum ObtenerCapacidad {
     public String obtenerCapacidad() {
         return capacidad;
     }
+
 }

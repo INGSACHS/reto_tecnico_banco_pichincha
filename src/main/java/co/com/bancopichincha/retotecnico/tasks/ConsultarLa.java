@@ -7,6 +7,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.conditions.Check;
 import net.serenitybdd.screenplay.rest.interactions.Get;
+import net.thucydides.core.annotations.Step;
 
 import static co.com.bancopichincha.retotecnico.utils.resources.ObtenerCapacidad.CAPACIDAD_CONSULTAR_MASCOTA_ESTADO;
 import static co.com.bancopichincha.retotecnico.utils.resources.ObtenerCapacidad.CAPACIDAD_CONSULTAR_MASCOTA_IDENTIFICADOR;
@@ -21,10 +22,11 @@ public class ConsultarLa implements Task {
     }
 
     @Override
+    @Step("{0} consulta la información de su máscota empleando como criterio de búsqueda el #tipoConsulta")
     public <T extends Actor> void performAs(T actor) {
         SerenityRest.reset();
         actor.attemptsTo(
-                Check.whether(tipoConsulta.equals("Identificador"))
+                Check.whether(tipoConsulta.equals("identificador"))
                         .andIfSo(
                                 Get.resource(CAPACIDAD_CONSULTAR_MASCOTA_IDENTIFICADOR.obtenerCapacidad())
                                         .with(request -> request

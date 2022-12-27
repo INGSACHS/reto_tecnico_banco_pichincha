@@ -16,14 +16,14 @@ public class ConstruirDatosDePrueba {
         Map<String, String> informacionMascota = new HashMap<>();
         informacionMascota.put("idMascota", String.valueOf(IDENTIFICADOR_MASCOTA.obtenerValor()));
         informacionMascota.put("idCategoria",
-                tipoSolicitud.equals("Creación") ? String.valueOf(obtenerIdCategoria(datosMascota.get("raza"))) : "1");
+                tipoSolicitud.equals("creación") ? String.valueOf(obtenerIdCategoria(datosMascota.get("raza"))) : "1");
         informacionMascota.put("nombreCategoria",
-                tipoSolicitud.equals("Creación") ? datosMascota.get("raza") : "ROTTWEILER");
+                tipoSolicitud.equals("creación") ? datosMascota.get("raza") : "ROTTWEILER");
         informacionMascota.put("nombreMascota", datosMascota.get("nombre"));
         informacionMascota.put("urlFotoMascota",
-                tipoSolicitud.equals("Creación") ? datosMascota.get("foto") : FOTO_MASCOTA.obtenerValor());
+                tipoSolicitud.equals("creación") ? datosMascota.get("foto") : FOTO_MASCOTA.obtenerValor());
         informacionMascota.put("estadoMascota",
-                tipoSolicitud.equals("Creación") ? "available" : datosMascota.get("estado"));
+                tipoSolicitud.equals("creación") ? "available" : datosMascota.get("estado"));
         return informacionMascota;
     }
 
