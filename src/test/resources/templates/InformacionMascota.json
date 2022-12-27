@@ -1,0 +1,12 @@
+{
+  "id": "${idMascota}",
+  "category": {
+    "id": "${idCategoria}",
+    "name": "${nombreCategoria}"
+  },
+  "name": "${nombreMascota}",
+  "photoUrls": [
+    "${urlFotoMascota}"
+  ],
+  "status": "${estadoMascota}"
+}
