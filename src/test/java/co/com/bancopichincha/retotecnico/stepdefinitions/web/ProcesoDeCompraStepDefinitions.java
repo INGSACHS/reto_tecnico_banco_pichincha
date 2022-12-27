@@ -16,7 +16,7 @@ import static org.hamcrest.Matchers.equalTo;
 public class ProcesoDeCompraStepDefinitions {
 
     @Dado("que navego a la aplicación de SwagLabs e ingreso a realizar una compra en línea")
-    public void navegarPaginaSwagLabs(String nombreActor) {
+    public void navegarPaginaSwagLabs() {
         theActorInTheSpotlight().wasAbleTo(
                 IngresarAl.catalogoDeProductos()
         );
